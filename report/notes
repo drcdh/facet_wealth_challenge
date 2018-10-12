@@ -1,0 +1,102 @@
+ 2,143 negative
+ 1,075 positive
+32,426 unlabeled
+35,644 total
+
+Status
+    OUTPUT
+Id
+    UNIQUE
+Refreshing
+    0   33,814
+    1    1,830
+Runner
+    0   34,007
+    1    1,637
+Baker
+    0   35,613
+    1       31
+Counter
+    0   34,444
+    1    1,200
+Regulator
+    0   35,462
+    1      182
+Has Python
+    0   14,793
+    1   20,851
+Has Whiteboard
+    0   17,498
+    1   18,146
+Has Reached Balmers Peak
+    0   34,437
+    1    1,207
+DNE
+    0   29,312
+    1    6,332
+Type of Activity Id
+    0.1    19327
+    0.2     3174
+    0.3     9768
+    0.4     3375
+Type of Movie Id
+    0.1    22398
+    0.2     6618
+    0.3     2369
+    0.4     1242
+    0.5     1231
+    0.6     1786
+Type of GPU Id
+    0.1    17717
+    0.2    11669
+    0.3     3844
+    0.4     1845
+    0.5      569
+Type of Laptop Id
+    0.1    19637
+    0.2     1808
+    0.3     3893
+    0.4     5213
+    0.5     2867
+    0.6     2226
+Type of Toaster Id
+    0.1    21229
+    0.2     3371
+    0.3     9580
+    0.4     1464
+Type of Deck Id
+    0.1     5407
+    0.2    22580
+    0.3     7331
+    0.4      326
+Type of Whale Id
+    0.1    27136
+    0.2     1785
+    0.3     1590
+    0.4     1163
+    0.5     3970
+Type of Star Id
+    0.1    23112
+    0.2     9594
+    0.3     1969
+    0.4      372
+    0.5      251
+    0.6      346
+Type of Dog Id
+    0.1    25978
+    0.2       86
+    0.3     1533
+    0.4     8047
+
+There is NO missing data!!!
+
+SVC or RandomForestClassifier
+    Judging from the True/False and Categorical (not necessarily ordinal, much less continuous) natures of the features, RFC is definitely the way to go.
+    We might as well transform the float data to integers (by multiplying by 10). We can do this all we want if we _only_ use Decision Trees.
+
+
+Spearmint, hyperopt
+sacred
+
+Metrics & confusion matrix
+
