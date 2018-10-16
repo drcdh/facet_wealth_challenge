@@ -88,15 +88,68 @@ Type of Dog Id
     0.3     1533
     0.4     8047
 
+__Correlations__
+    Refreshing                  0.027010
+    Runner                     -0.011530
+    Baker                       0.009356
+    Counter                     0.007731
+    Regulator                   0.015206
+    Has Python                  0.119122
+    Has Whiteboard              0.121869
+    Has Reached Balmers Peak    0.031086
+    DNE                        -0.049873
+    Type of Activity Id         0.064015
+    Type of Movie Id            0.074840
+    Type of GPU Id             -0.018465
+    Type of Laptop Id           0.068390
+    Type of Toaster Id          0.056893
+    Type of Deck Id             0.092488
+    Type of Whale Id            0.054887
+    Type of Star Id             0.071433
+    Type of Dog Id              0.036747
+~~~~~
+    DNE                        -0.049873
+    Type of GPU Id             -0.018465
+    Runner                     -0.011530
+    Counter                     0.007731
+    Baker                       0.009356
+    Regulator                   0.015206
+    Refreshing                  0.027010
+    Has Reached Balmers Peak    0.031086
+    Type of Dog Id              0.036747
+    Type of Whale Id            0.054887
+    Type of Toaster Id          0.056893
+    Type of Activity Id         0.064015
+    Type of Laptop Id           0.068390
+    Type of Star Id             0.071433
+    Type of Movie Id            0.074840
+    Type of Deck Id             0.092488
+    Has Python                  0.119122
+    Has Whiteboard              0.121869
+
+
 There is NO missing data!!!
 
 SVC or RandomForestClassifier
-    Judging from the True/False and Categorical (not necessarily ordinal, much less continuous) natures of the features, RFC is definitely the way to go.
+    Judging from the True/False and Categorical (not necessarily ordinal, much less continuous) natures of the features, RFC is definitely the way to go (bootstrapping).
     We might as well transform the float data to integers (by multiplying by 10). We can do this all we want if we _only_ use Decision Trees.
+    Could use PCA in an ensemble model (or otherwise do reduction of parameters), but that would violate the project's terms. Same goes for XGBoost, etc.
+    Weights according to the spread in TEST (unknown) data? Not something I've done before and not something I'm comfortable doing in theory.
+    Since this is all (taken as) categorical, there's no feature engineering/transformation to do...
+    Comment in report that asking (Gorkem) for an "expected goodness" of score is cheating, in a real-world sense.
 
 
-Spearmint, hyperopt
-sacred
+__Oct 12__
+    sacred working (?)
+    Need to work on visualization/report of sacred's logs
+    NEXT: hyperopt, hyperparameter ranges recorded to sacred along with results of best trial
+__Oct 14__
+    hyperopt working, but not really tied to sacred. Doing the logging myself. Project scope doesn't really demand something like sacred (I'm not roping MongoDB into this).
+    ROCAUC stuck at ~.61 :-/
+    Considering time, committed to RFC (I still think it's the best choice).
+    One-hot encode (non-binary) features: not as groundbreaking as hoped
+    f1-score stuck at ~.51
+    Sample training set according to feature-distributions in test set? Probably too late, but something to note.
 
 Metrics & confusion matrix
 
